@@ -30,18 +30,19 @@ document.addEventListener('DOMContentLoaded', function () {
   }(window));
 
   var speed = 50,
-      duration = (1.0 / speed),
-      confettiRibbonCount = 0,
-      ribbonPaperDist = 8.0,
-      ribbonPaperThick = 8.0,
-      confettiPaperCount = 95,
-      DEG_TO_RAD = PI / 180,
-      RAD_TO_DEG = 180 / PI,
-      colors = [
+    duration = (1.0 / speed),
+    confettiRibbonCount = 4,
+    ribbonPaperCount = 30,
+    ribbonPaperDist = 8.0,
+    ribbonPaperThick = 5.0,
+    confettiPaperCount = 95,
+    DEG_TO_RAD = PI / 180,
+    RAD_TO_DEG = 180 / PI,
+    colors = [
       ["#B7F2FF", "#97E0D2"],
       ["#FFAE6B", "#E98A6A"],
       ["#FFF4BF", "#FFE76D"]
-      ];
+    ];
 
   function Vector2(_x, _y) {
     this.x = _x, this.y = _y;
@@ -127,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
     this.angle = DEG_TO_RAD * random() * 360;
     this.rotation = DEG_TO_RAD * random() * 360;
     this.cosA = 1.0;
-    this.size = 5.0;
+    this.size = 4.0;
     this.oscillationSpeed = (random() * 1.5 + 0.5);
     this.xSpeed = 40.0;
     this.ySpeed = (random() * 60 + 50.0);

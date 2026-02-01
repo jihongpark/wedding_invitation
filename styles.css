@@ -92,18 +92,20 @@ body, .container {
   position: absolute;
   top: 32px;
   left: 32px;
-  color: #9F6633;
+  color: #5F3510;
   font-size: 22px;
+  opacity: 0.7;
   text-align: center;
 }
 .hero-names {
   position: absolute;
   bottom: 24px;
   right: 32px;
-  color: #9F6633;
+  color: #5F3510;
   font-family: 'Lily Script One';
-  font-size: 22px;
+  font-size: 20px;
   text-align: right;
+  opacity: 0.7;
   width: 90%;
 }
 section[class*="2 intro"] {
@@ -111,8 +113,8 @@ section[class*="2 intro"] {
   padding: 100px 32px 100px 32px;
 }
 .desc {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.8;
   font-weight: 600;
 }
 .desc-paragraph {
@@ -306,6 +308,7 @@ section[class*="7 account number"] .title {
 }
 .timeline-images img {
   width: calc(100vw - 64px);
+  max-width: 416px;
   scroll-snap-align: center;
   object-fit: cover;
   display: block;
