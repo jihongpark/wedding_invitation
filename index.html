@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="hero-loader" class="hero-loader">
+    <div class="spinner"></div>
+  </div>
   <div class="main-mobile-container">
   <!-- 인트로 애니메이션 오버레이 -->
   <div id="intro-animation" class="intro-animation">
@@ -58,7 +61,7 @@
     </div>
   </section>
   <section class="4 parents">
-    <div class="parents-top-bar"></div>
+  
     <div class="parents-content">
       <div class="parents-top">
         <div class="parents-korean">박영대ㆍ김미옥의 아들</div>
@@ -103,6 +106,7 @@
     <img id="viewer-image" src="" alt="" class="viewer-image">
     <div class="viewer-nav-container">
       <button id="prev-image" class="viewer-nav-btn viewer-prev-btn"><span class="material-symbols-outlined">chevron_left</span></button>
+      <span id="viewer-count" class="viewer-count"></span>
       <button id="next-image" class="viewer-nav-btn viewer-next-btn"><span class="material-symbols-outlined">chevron_right</span></button>
     </div>
   </div>

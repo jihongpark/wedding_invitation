@@ -1,15 +1,45 @@
 body {
+  font-family: 'Apple SD Gothic Neo', sans-serif;
   background: #EDDDC9;
   margin: 0;
-  font-family: 'Apple SD Gothic Neo', sans-serif;
-  box-sizing: border-box;
+
 }
 
-.main-mobile-container {
+.hero-loader {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  min-width: 480px;
   max-width: 480px;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s;
+  transform: translateX(-50%);
+}
+
+.hero-loader .spinner {
+  width: 48px; height: 48px;
+  border: 5px solid #ffa04c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+ 
+
+.main-mobile-container {
+  max-width: 640px;
   width: 100%;
   margin: 0 auto;
-  background: #fff;
+  background: #f5dbc3;
   min-height: 100vh;
 }
 
@@ -46,7 +76,7 @@ body {
   position: relative;
   background: #ffa04c;
   overflow: hidden;
-  color: #fff;
+  color: #f5dbc3;
   text-align: left;
 }
 .hero-image {
@@ -529,6 +559,24 @@ section[class*="7 account number"] {
   margin-bottom: 24px;
 }
 .viewer-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer-count {
+  margin: 0 18px;
+  color: #fff;
+  background: rgba(30,30,30,0.5);
+  border-radius: 12px;
+  padding: 2px 18px;
+  font-size: 1.08em;
+  font-weight: 600;
+  font-family: 'Sorts Mill Goudy', serif !important;
+}
+
+.viewer-nav-btn {
+
   display: flex;
   align-items: center;
   justify-content: center;

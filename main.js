@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Hero 이미지 로딩될 때까지 오버레이 유지
+  const heroImg = document.querySelector('.hero-image');
+  const heroLoader = document.getElementById('hero-loader');
+  if (heroImg && heroLoader) {
+    if (heroImg.complete) {
+      heroLoader.style.opacity = 0;
+      setTimeout(() => heroLoader.style.display = 'none', 350);
+    } else {
+      heroImg.addEventListener('load', () => {
+        heroLoader.style.opacity = 0;
+        setTimeout(() => heroLoader.style.display = 'none', 350);
+      });
+    }
+  }
   // ===== 인트로 애니메이션 - 컨페티와 리본 (CodePen 코드)
   var retina = window.devicePixelRatio,
       PI = Math.PI,
@@ -29,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
     cAF = function (id) { cancel.call(w, id); };
   }(window));
 
-  var speed = 50,
+  var speed = 40,
     duration = (1.0 / speed),
     confettiRibbonCount = 4,
-    ribbonPaperCount = 30,
+    ribbonPaperCount = 27,
     ribbonPaperDist = 8.0,
     ribbonPaperThick = 5.0,
     confettiPaperCount = 95,
@@ -197,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
     this.time = random() * 100;
     this.oscillationSpeed = (random() * 2 + 2);
     this.oscillationDistance = (random() * 40 + 40);
-    this.ySpeed = (random() * 40 + 80);
+    this.ySpeed = (random() * 70 + 90);
     for (var i = 0; i < this.particleCount; i++) {
       this.particles[i] = new EulerMass(_x, _y - i * this.particleDist, this.particleMass, this.particleDrag);
     }
@@ -377,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
       ConfettiPaper.stopGenerating = true;
       ConfettiRibbon.stopGenerating = true;
-    }, 4000);
+    }, 2000);
   }
   window.addEventListener('resize', function (event) {
     if (confetti && confetti.resize) {
@@ -457,6 +471,11 @@ function showViewer(idx) {
     currentIndex = idx;
     viewerImage.src = images[idx].src;
     viewer.style.display = 'flex';
+    // 이미지 번호/전체 표시 업데이트
+    const viewerCount = document.getElementById('viewer-count');
+    if (viewerCount) {
+        viewerCount.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
     // Prev/Next 버튼 상태 토글 (disabled + opacity 동시 유지)
     if (prevBtn) {
         prevBtn.disabled = (currentIndex === 0);
@@ -508,6 +527,20 @@ if (viewer) {
         }
         startX = null; deltaX = 0;
     });
+
+    // [추가] 전체화면 뷰어 클릭 시 좌/우측 영역 판별하여 페이지 이동
+    if (viewerImage) {
+        viewerImage.addEventListener('click', (e) => {
+            const rect = viewerImage.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            if (x > rect.width * 0.6 && currentIndex < images.length - 1) {
+                showNext();
+            } else if (x < rect.width * 0.4 && currentIndex > 0) {
+                showPrev();
+            }
+        });
+    }
+
     // 마우스 드래그(PC용 간단 버전)
     let mouseDown = false, mouseStartX = null, mouseMoveX = 0;
     viewer.addEventListener('mousedown', (e) => {
@@ -524,6 +557,7 @@ if (viewer) {
         mouseDown = false; mouseStartX = null; mouseMoveX = 0;
     });
 }
+
 
 
 // ... 이하 기존 사용자 코드 ...
