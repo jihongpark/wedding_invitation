@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', function () {
     cAF = function (id) { cancel.call(w, id); };
   }(window));
 
-  var speed = 40,
+  var speed = 50,
     duration = (1.0 / speed),
     confettiRibbonCount = 4,
-    ribbonPaperCount = 27,
+    ribbonPaperCount = 25,
     ribbonPaperDist = 8.0,
-    ribbonPaperThick = 5.0,
+    ribbonPaperThick = 4.0,
     confettiPaperCount = 95,
     DEG_TO_RAD = PI / 180,
     RAD_TO_DEG = 180 / PI,
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
     this.time = random() * 100;
     this.oscillationSpeed = (random() * 2 + 2);
     this.oscillationDistance = (random() * 40 + 40);
-    this.ySpeed = (random() * 70 + 90);
+    this.ySpeed = (random() * 60 + 100);
     for (var i = 0; i < this.particleCount; i++) {
       this.particles[i] = new EulerMass(_x, _y - i * this.particleDist, this.particleMass, this.particleDrag);
     }
