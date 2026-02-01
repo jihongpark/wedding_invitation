@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
     cAF = function (id) { cancel.call(w, id); };
   }(window));
 
-  var speed = 50,
+  var speed = 55,
     duration = (1.0 / speed),
     confettiRibbonCount = 4,
-    ribbonPaperCount = 25,
+    ribbonPaperCount = 24,
     ribbonPaperDist = 8.0,
-    ribbonPaperThick = 4.0,
-    confettiPaperCount = 95,
+    ribbonPaperThick = 3.0,
+    confettiPaperCount = 40,
     DEG_TO_RAD = PI / 180,
     RAD_TO_DEG = 180 / PI,
     colors = [
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     this.angle = DEG_TO_RAD * random() * 360;
     this.rotation = DEG_TO_RAD * random() * 360;
     this.cosA = 1.0;
-    this.size = 4.0;
+    this.size = 3.0;
     this.oscillationSpeed = (random() * 1.5 + 0.5);
     this.xSpeed = 40.0;
     this.ySpeed = (random() * 60 + 50.0);
