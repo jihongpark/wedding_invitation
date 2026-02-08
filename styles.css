@@ -4,6 +4,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'monaco';
+  src: url('/fonts/Monaco.ttf') format('ttf');
+  font-display: swap;
+}
+
 
 body {
   font-family: 'noto sans kr', sans-serif;
@@ -519,6 +525,7 @@ section[class*="7 account number"] .title {
 }
 .account-number {
   flex: 1;
+  font-family: 'monaco', 'noto sans kr' !important;
 }
 .copy-account {
   cursor: pointer;
