@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'monaco';
-  src: url('/fonts/Monaco.ttf') format('ttf');
+  src: url('/fonts/Monaco.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -249,6 +249,8 @@ section[class*="4 parents"] {
 .parents-label,
 .parents-name {
   display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
 }
 .parents-ampersand {
   font-size: 80px;
@@ -299,7 +301,8 @@ section[class*="7 account number"] {
 }
 .title {
   font-size: 20px;
-  font-family: ;
+  font-family: 'noto sans kr', sans-serif !important;
+  font-weight: 500;
   color: #56321b;
   letter-spacing: 0;
   margin: 0 0 24px 0;
