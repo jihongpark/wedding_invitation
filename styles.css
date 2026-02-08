@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'high summit';
+  src: url('/fonts/HighSummit.woff2') format('woff2');
+  font-display: swap;
+}
+
+
 body {
   font-family: 'noto sans kr', sans-serif;
   background: #EDDDC9;
