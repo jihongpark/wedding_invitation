@@ -1,5 +1,5 @@
 body {
-  font-family: 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'noto sans kr', sans-serif;
   background: #EDDDC9;
   margin: 0;
 
@@ -91,7 +91,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #FF8418;
-  font-family: 'Dancing Script', cursive !important;
+  font-family: 'high summit', cursive !important;
   font-size: 72px;
   line-height: 1.1;
   margin-bottom: 8px;
@@ -103,18 +103,18 @@ body {
 
 
 body, .container {
-  font-family: 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'noto sans kr', sans-serif;
 }
 
 .hero-date, .hero-names, .timeline-title, .btn, .english-title, .parents-ampersand,.desc-eng, .eng, .photos .eng, .family .english-title .wedding-photo-title{
-  font-family: 'Sorts Mill Goudy', serif !important;
+  font-family: 'monaco', serif !important;
 }
 .timeline-bg-text{
   font-family: 'Lily Script One', cursive !important;
 }
 
 .parents-label, .parents-name, .title, .account-number {
-  font-family: 'Apple SD Gothic Neo', sans-serif !important;
+  font-family: 'noto sans kr', sans-serif !important;
 }
 
 
@@ -123,7 +123,7 @@ body, .container {
   top: 32px;
   left: 32px;
   color: #5F3510;
-  font-size: 22px;
+  font-size: 16px;
   opacity: 0.7;
   text-align: center;
 }
@@ -133,14 +133,14 @@ body, .container {
   right: 32px;
   color: #5F3510;
   font-family: 'Lily Script One';
-  font-size: 20px;
+  font-size: 16px;
   text-align: right;
   opacity: 0.7;
   width: 90%;
 }
 section[class*="2 intro"] {
   background: #ffa04c; color: #4B3F31; 
-  padding: 100px 32px 100px 32px;
+  padding: 80px 32px 80px 32px;
 }
 .desc {
   font-size: 14px;
@@ -185,7 +185,7 @@ section[class*="2 intro"] {
 }
 section[class*="3 wedding photo"] {
   background: #faede0; color: #56321b;
-  padding: 100px 32px 100px 32px;
+  padding: 80px 32px 80px 32px;
 }
 section[class*="4 parents"] {
   background: #524638;
@@ -206,7 +206,7 @@ section[class*="4 parents"] {
   background: #ffaa60;
 }
 .parents-content {
-  padding: 100px 32px;
+  padding: 80px 32px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -220,16 +220,16 @@ section[class*="4 parents"] {
   gap: 32px;
 }
 .parents-korean {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
-  font-family: 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'noto sans kr', sans-serif;
 }
 .parents-english {
   font-size: 18px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
-  font-family: 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'noto sans kr', sans-serif;
   display: flex;
   gap: 12px;
 }
@@ -239,52 +239,54 @@ section[class*="4 parents"] {
 }
 .parents-ampersand {
   font-size: 80px;
+  font-family: 'high summit', cursive !important;
   color: rgba(255, 255, 255, 0.2);
   line-height: 1;
 }
 section[class*="5 timeline photo"] {
-  background: #F7D1B0; 
-  padding: 100px 0px 100px 0%;
+  background: #ead3be; 
+  padding: 80px 0px 80px 0%;
   position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 0 !important;
 }
 .wedding-photo-title {
-  font-size: 24px;
+  font-size: 20px;
   color: #56321b;
   margin-bottom: 24px;
   position: relative;
   z-index: 2;
-  font-family: 'Sorts Mill Goudy', serif !important;
+  font-family: 'monaco', serif !important;
 }
 .timeline-title {
-  font-size: 24px;
+  font-size: 20px;
   color: #56321b;
   position: relative;
   z-index: 2;
-  font-family: 'Sorts Mill Goudy', serif !important;
+  font-family: 'monaco', serif !important;
 }
 .timeline-subtitle{
-  font-size: 20px;
+  font-size: 16px;
   color: #56321b;
   opacity: 0.6;
+  margin-top: 4px;
   padding-left: 32px;
   position: relative;
   z-index: 2;
-  font-family: 'Sorts Mill Goudy', serif !important;
+  font-family: 'monaco', serif !important;
 
 }
 .timeline-title{padding-left: 32px;}
 
 section[class*="7 account number"] {
   background-color: #FAEDE0;; color: #fff;
-  padding: 100px 32px 100px 32px;
+  padding: 80px 32px 80px 32px;
   margin-top: 0 !important;
 }
 .title {
-  font-family: 'Lily Script One';
-  font-size: 24px;
+  font-size: 20px;
+  font-family: ;
   color: #56321b;
   letter-spacing: 0;
   margin: 0 0 24px 0;
@@ -298,7 +300,7 @@ section[class*="7 account number"] .title {
 .note {
   font-size: 16px;
   padding: 20px 24px;
-  font-family: 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'noto sans kr', sans-serif;
   font-weight: 400;
   opacity: 0.7;
   margin-bottom: 24px;
@@ -439,7 +441,7 @@ section[class*="7 account number"] .title {
   color: #fff;
   border-radius: 16px;
   padding: 18px 0;
-  font-family: 'Apple SD Gothic Neo', sans-serif;
+  font-family: 'noto sans kr', sans-serif;
   font-weight: 400;
   font-size: 18px;
   text-align: center;
@@ -572,7 +574,7 @@ section[class*="7 account number"] {
   padding: 2px 18px;
   font-size: 1.08em;
   font-weight: 600;
-  font-family: 'Sorts Mill Goudy', serif !important;
+  font-family: 'monaco', serif !important;
 }
 
 .viewer-nav-btn {
