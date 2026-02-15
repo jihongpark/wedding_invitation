@@ -344,27 +344,35 @@ section[class*="7 account number"] .title {
   -ms-overflow-style: none;
 }
 
-.timeline-images{
+.timeline-images {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 0;
+  gap: 16px;
   -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  padding: 24px;
+  scroll-behavior: auto !important;
+  padding: 24px 0;
+  position: relative;
+  margin: 0;
+  cursor: grab;
 }
+.timeline-images * { cursor: grab; }
+.timeline-images.dragging, .timeline-images.dragging * { cursor: grabbing !important; }
+
 .timeline-images img {
-  width: calc(100vw - 64px);
-  max-width: 416px;
-  scroll-snap-align: center;
+  width: 208px;
+  max-width: 208px;
+  height: 208px;
   object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  flex-shrink: 0;
   border-radius: 24px;
+  scroll-snap-align: center;
+  margin: 0;
   box-shadow: none;
 }
+
+.timeline-images img:first-child { margin-left: 32px; }
+.timeline-images img:last-child { margin-right: 32px; }
 .photos {
   padding-left: 0;
   padding-right: 0;
@@ -402,23 +410,6 @@ section[class*="7 account number"] .title {
 .photos img:hover,
 .photos .photo-item:hover {
   transform: scale(1.02);
-}
-.timeline-images {
-  position: relative;
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-  gap: 16px;
-}
-.timeline img {
-  border-radius: 24px;
-  width: calc(100vw - 64px);
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  background: #fff;
-  flex-shrink: 0;
 }
 .timeline-images img:first-child,
 .timeline-images .photo-item:first-child {

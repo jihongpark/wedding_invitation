@@ -563,33 +563,80 @@ if (viewer) {
 // ... 이하 기존 사용자 코드 ...
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+
+window.addEventListener('load', function () {
   const carousel = document.querySelector('.timeline-images');
   let interval, pauseTimeout;
-  let speed = 1; // 한 번에 움직일 px (↓더 느리게=0.5, 더 빠르게=2로 조절)
+  let speed = 2;
+  let isAutoFlowStarted = false;
   function autoFlow() {
     if (!carousel) return;
     carousel.scrollLeft += speed;
-    // 다 오른쪽 끝이면 맨 앞으로 돌아감
     if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 1) {
       carousel.scrollLeft = 0;
     }
   }
   function startAutoFlow() {
+    if (isAutoFlowStarted) return;
+    isAutoFlowStarted = true;
     clearInterval(interval);
-    interval = setInterval(autoFlow, 20); // 20ms(0.02초)에 1px씩 움직임 (더 빠르게/느리게 가능)
+    interval = setInterval(autoFlow, 20);
+  }
+  function stopAutoFlow() {
+    isAutoFlowStarted = false;
+    clearInterval(interval);
   }
   function pauseAutoFlow() {
-    clearInterval(interval);
+    stopAutoFlow();
     clearTimeout(pauseTimeout);
-    pauseTimeout = setTimeout(startAutoFlow, 4000); // 손대면 4초 멈췄다 다시 흐름 재개
+    pauseTimeout = setTimeout(startAutoFlow, 4000);
   }
+  // 오토스크롤 시작 트리거: timeline-images 영역이 보이기 시작할 때
   if (carousel) {
-    startAutoFlow();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startAutoFlow();
+        } else {
+          stopAutoFlow();
+        }
+      },
+      { threshold: 0, rootMargin: '0px 0px -16% 0px' }
+    );
+    observer.observe(carousel);
+    // 마우스, 터치 등 조작시 일시정지(최초 진입 후만)
     ['touchstart', 'mousedown', 'wheel', 'pointerdown'].forEach(eventName => {
       carousel.addEventListener(eventName, pauseAutoFlow, { passive: true });
     });
+
+    // --- PC 마우스 드래그 스크롤 기능 추가 ---
+    let isDrag = false;
+    let startX, startScrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+      // 마우스 왼쪽 버튼만 동작
+      if (e.button !== 0) return;
+      isDrag = true;
+      carousel.classList.add('dragging');
+      startX = e.pageX;
+      startScrollLeft = carousel.scrollLeft;
+      // 드래그시 텍스트 등 선택 방지
+      document.body.style.userSelect = 'none';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDrag) return;
+      e.preventDefault();
+      const x = e.pageX;
+      const walk = x - startX;
+      carousel.scrollLeft = startScrollLeft - walk;
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!isDrag) return;
+      isDrag = false;
+      carousel.classList.remove('dragging');
+      document.body.style.userSelect = '';
+    });
   }
 });
-
-
